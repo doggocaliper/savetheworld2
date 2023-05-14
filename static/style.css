@@ -1,0 +1,38 @@
+body {
+  background-color: #D7BCFD;
+} 
+
+h1 {
+  color: #2946BF
+}
+
+h2 {
+  color: #2946BF
+}
+
+h3 {
+  color: #2946BF
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
