@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <center>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Match with!</title>
+    <img src="https://github.com/doggocaliper/Savetheworld1/blob/main/Heading.png?raw=true" alt="logo" width="200" height="200">
+    <h1>Matchables!</h1>
+  <ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="typetest.html">Type Test</a></li>
+  <li><a href="matchme.html">Match Me</a></li>
+  <li><a href="matchwith.html">Matchables</a></li>
+  <li><a href="tips.html">Tips</a></li>
+  <li><a href="chatgpt.html">Chat</a></li>
+  </ul>
+  </head>
+  <body>
+    <br>
+    <h2>View the profiles of others and enjoy the information we have curated.</h2>
+    <br>
+    <h2>Afterwards you can reach out to them via Instagram or smth.</h2>
+    <br>
+    <h1>Matches:</h1>
+    {% if matches %}
+      <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+          <th>Name</th>
+          <th>Sex</th>
+          <th>Birth Year</th>
+          <th>Class</th>
+          <th>Sexuality</th>
+          <th>IG Handle</th>
+          <th>Interests + Type</th>
+          <th>MBTI</th>
+          <th>Matched MBTI</th>
+        </tr>
+        {% for match in matches %}
+        <tr>
+          <td>{{ match[0] }}</td>
+          <td>{{ match[1] }}</td>
+          <td>{{ match[2] }}</td>
+          <td>{{ match[3] }}</td>
+          <td>{{ match[5] }}</td>
+          <td>{{ "@" + match[4] }}</td>
+          <td>{{ match[6] }}</td>
+          <td>{{ match[7] }}</td>
+          <td>{{ match[8] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No matches found (yet).</p>
+    {% endif %}
+
+  </body>
+  </center>
+</html>
