@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>ChatGPT</title>
+    <link rel="stylesheet"heet" href="{{ url_for('static', filename='style.css') }}">
+  <center>
+  <img src="https://github.com/doggocaliper/Savetheworld1/blob/main/Heading.png?raw=true" alt="logo" width="200" height="200">
+  <h1>Chat with AI</h1>
+  <ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="typetest.html">Type Test</a></li>
+  <li><a href="matchme.html">Match Me</a></li>
+  <li><a href="matchwith.html">Matchables</a></li>
+  <li><a href="tips.html">Tips</a></li>
+  <li><a href="chatgpt.html">Chat</a></li>
+  </ul>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        .message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 70%;
+        }
+        .user-message {
+            background-color: #f3f3f3;
+        }
+        .bot-message {
+            background-color: #d0e8ff;
+        }
+        pre code {
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chat with an AI to ask for dating tips.</h2>
+    <div id="chatbox">
+        <div id="messages"></div>
+        <div id="user-input">
+            <form id="user-form">
+                <input type="text" id="user-input-text" placeholder="Say something...">
+                <input type="submit" value="Send">
+            </form>
+            <br>
+            <button id="reset-button">Reset Conversation</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#user-form').submit(function(event) {
+                event.preventDefault();
+                var user_input = $('#user-input-text').val();
+                $('#messages').append('<div class="message user-message">' + user_input + '</div>');
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_response',
+                    data: { user_input: user_input },
+                    success: function(response) {
+                        $('#messages').append('<div class="message bot-message">' + response + '</div>');
+                        $('#messages').animate({ scrollTop: $('#messages').prop("scrollHeight") }, 1000);
+                        $('pre code').each(function(i, block) {
+                            hljs.highlightBlock(block);
+                        });
+                    }
+                });
+                $('#user-input-text').val('');
+            });
+            $('#reset-button').click(function() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/reset',
+                    success: function(response) {
+                        $('#messages').empty();
+                    }
+                });
+            });
+        });
+    </script>
+  </center>
+</body>
+</html>
