@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <center>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Match me!</title>
+  </head>
+  <body>
+    
+    <img src="https://github.com/doggocaliper/Savetheworld1/blob/main/Heading.png?raw=true" alt="logo" width="200" height="200">
+    <h1>Match me!</h1>
+  <ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="typetest.html">Type Test</a></li>
+  <li><a href="matchme.html">Match Me</a></li>
+  <li><a href="matchwith.html">Matchables</a></li>
+  <li><a href="tips.html">Tips</a></li>
+  <li><a href="chatgpt.html">Chat</a></li>
+  </ul>
+    <br>
+    <h2>This is a page where you can attempt to find a significant other, by filling up the form below. Do note that your details will be published under "Matchables" as a form of self promotion.</h2>
+    <h3>
+    <form action="/matchme.html" method="POST">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name"><br>
+    <br>
+    <label for="sex">Enter your gender:</label>
+    <input type="text" id="sex" name="sex"><br>
+    <br>
+    <label for="birthyear">Select your birth year:</label>
+    <br>
+    Note: Only 2004, 2005, 2006 are allowed.
+    <br>
+    <input type="text" id="birthyear" name="birthyear">
+    <br>
+    <br>
+    <label for="classs">Enter your class (for easier identification):</label>
+    <input type="text" id="classs" name="classs"><br>
+    <br>
+    <label for="ighandle">Enter your Instagram handle (you agree to you give your Instagram handle for easier contact):</label>
+    <br>
+    @<input type="text" id="ighandle" name="ighandle"><br>
+    <h3>Confused about what is your sexual orientation?<br> Here is a list of sexual orientations available in this world:</h3>
+    <img src="https://dmh.lacounty.gov/wp-content/uploads/2022/07/Pride-Flags.jpg" alt="PRIDE FLAGS" width="400" height="300">
+    <br>
+    <br>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+        <th>Sexual orientation</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Heterosexual</td>
+        <td>Attraction to individuals of the opposite sex. This is the most common sexual orientation.</td>
+      </tr>
+      <tr>
+        <td>Homosexual</td>
+        <td>Attraction to individuals of the same sex. This includes gay men, lesbian women, and other individuals who identify as part of the LGBTQ+ community.</td>
+      </tr>
+      <tr>
+        <td>Bisexual</td>
+        <td>Attraction to individuals of both sexes. This can also include individuals who are attracted to people regardless of their gender identity.</td>
+      </tr>
+      <tr>
+      <td>Pansexual</td>
+      <td>Attraction to individuals of all genders and gender identities.</td>
+      </tr>
+      <tr>
+      <td>Asexual</td>
+      <td>Lack of sexual attraction to any gender. Some asexual individuals may still experience romantic attraction.</td>
+      </tr>
+      <tr>
+      <td>Demisexual</td>
+      <td>Attraction only after a strong emotional connection has been established.</td>
+      </tr>
+      <tr>
+      <td>Queer</td>
+      <td>A term that can be used to describe anyone who identifies as part of the LGBTQ+ community, but does not fit neatly into any of the other categories.</td>
+      </tr>
+    </table>
+    <br>
+    <label for="sexuality">Enter your sexuality:</label>
+    <input type="text" id="sexuality" name="sexuality">
+    <br>
+    <br>
+    <label for="interests">Enter your interest/hobbies and type:</label>
+    <br>
+    <textarea id="interests" name="interests" rows="6" cols="40">E.g. My interests includes taking a walk or going out to anywhere in general. Right now I don't actually have a fixed hobby so maybe we can try new things together to find myself a hobby. (real) As for type: Respectful</textarea>
+    <br>
+    <br>
+    <h3>For the section below, do head over to Type Test to complete the type test first. It would help A LOT with matching you to the right person.</h3>
+    <br>
+    <img src="https://i.redd.it/ga2wj8suz1s61.png" alt="mbti meme" width="400" height="600">
+    <br>
+    <br>
+    <label for="mbti">Enter your MBTI:</label>
+    <input type="text" id="mbti" name="mbti"><br>
+    <br>
+    <label for="matchedmbti">Enter the MBTI that you were matched with:</label>
+    <input type="text" id="matchedmbti" name="matchedmbti"><br>
+    <br>
+    <input type="submit" onclick="alert('Please wait patiently.')" value="Submit">
+    </form>
+    </h3>
+  </center>
+  </body>
+</html>
